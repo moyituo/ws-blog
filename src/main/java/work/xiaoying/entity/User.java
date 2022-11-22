@@ -11,6 +11,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.Tolerate;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -23,7 +24,9 @@ import java.util.Date;
 @Builder
 @TableName("t_user")
 @ApiModel(value = "User对象", description = "")
-public class User {
+public class User implements Serializable {
+
+    private static final long serialVersionUID = 1L;
 
     @Tolerate
     public User() {
