@@ -2,7 +2,9 @@ package work.xiaoying.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import work.xiaoying.entity.NavBar;
-import work.xiaoying.entity.vo.NavBarVO;
+import work.xiaoying.entity.dto.bar.BarInfoDTO;
+import work.xiaoying.entity.vo.bar.NavBarVO;
+import work.xiaoying.result.R;
 
 import java.util.List;
 
@@ -20,4 +22,28 @@ public interface NavBarService extends IService<NavBar> {
      * @return {@link List}<{@link NavBarVO}>
      */
     List<NavBarVO> getBarList();
+
+    /**
+     * 添加
+     *
+     * @param barInfoDTO 参数对象
+     * @return {@link R}<{@link String}>
+     */
+    R<String> add(BarInfoDTO barInfoDTO);
+
+    /**
+     * 编辑
+     *
+     * @param barInfoDTO 参数对象
+     * @return {@link R}<{@link String}>
+     */
+    R<String> edit(BarInfoDTO barInfoDTO);
+
+    /**
+     * 删除
+     *
+     * @param id id
+     * @return {@link R}<{@link String}>
+     */
+    R<String> delete(Integer id);
 }

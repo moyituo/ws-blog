@@ -1,9 +1,11 @@
-package work.xiaoying.entity.vo;
+package work.xiaoying.entity.vo.bar;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 @Data
+@ApiModel("导航栏视图")
 public class NavBarVO {
 
     @ApiModelProperty("主键ID")
