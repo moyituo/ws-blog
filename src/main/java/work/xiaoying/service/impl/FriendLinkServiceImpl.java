@@ -4,7 +4,7 @@ import cn.hutool.core.bean.BeanUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 import work.xiaoying.entity.FriendLink;
-import work.xiaoying.entity.dto.frient.FriendLinkDTO;
+import work.xiaoying.entity.dto.friend.FriendLinkDTO;
 import work.xiaoying.entity.vo.friend.FriendLinkVO;
 import work.xiaoying.mapper.FriendLinkMapper;
 import work.xiaoying.result.R;

@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 import work.xiaoying.constant.ErrorMessage;
-import work.xiaoying.entity.dto.frient.FriendLinkDTO;
+import work.xiaoying.entity.dto.friend.FriendLinkDTO;
 import work.xiaoying.entity.vo.friend.FriendLinkVO;
 import work.xiaoying.result.R;
 import work.xiaoying.service.FriendLinkService;

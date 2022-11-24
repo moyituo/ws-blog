@@ -2,7 +2,7 @@ package work.xiaoying.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import work.xiaoying.entity.FriendLink;
-import work.xiaoying.entity.dto.frient.FriendLinkDTO;
+import work.xiaoying.entity.dto.friend.FriendLinkDTO;
 import work.xiaoying.entity.vo.friend.FriendLinkVO;
 import work.xiaoying.result.R;
 

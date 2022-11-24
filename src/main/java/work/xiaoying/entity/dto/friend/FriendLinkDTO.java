@@ -1,4 +1,4 @@
-package work.xiaoying.entity.dto.frient;
+package work.xiaoying.entity.dto.friend;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
