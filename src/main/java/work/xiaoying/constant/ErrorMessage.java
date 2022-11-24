@@ -19,4 +19,8 @@ public class ErrorMessage {
     public static final String ICON_IS_BLANK="图标地址不合法";
     public static final String ICON_TOO_LONG="图标地址过长";
 
+    //=================================简介=========================================
+    public static final String DESC_IS_BLANK="简介不合法";
+    public static final String DESC_TOO_LONG="简介过长";
+
 }

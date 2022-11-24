@@ -1,5 +1,8 @@
 package work.xiaoying.utils;
 
+import org.jetbrains.annotations.Contract;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.BiConsumer;
@@ -22,7 +25,8 @@ public class Builder<T> {
         this.constructor=constructor;
     }
 
-    public static <T> Builder<T> builder(Supplier<T> constructor){
+    @Contract("_ -> new")
+    public static <T> @NotNull Builder<T> builder(Supplier<T> constructor){
         return new Builder<>(constructor);
     }
 
