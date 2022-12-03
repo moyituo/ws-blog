@@ -25,7 +25,7 @@ public class FriendLinkVO {
     private String blogUrl;
 
     @ApiModelProperty("个人简介")
-    private String desc;
+    private String description;
 
     @ApiModelProperty("头像")
     private String avatar;

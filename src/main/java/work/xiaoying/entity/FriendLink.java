@@ -32,9 +32,9 @@ public class FriendLink implements Serializable {
     @ApiModelProperty("博客链接")
     private String blogUrl;
 
-    @TableField("desc")
+    @TableField("description")
     @ApiModelProperty("个人简介")
-    private String desc;
+    private String description;
 
     @TableField("avatar")
     @ApiModelProperty("头像")
