@@ -11,4 +11,5 @@ public class FileUploadRequestDTO {
     private Integer chunks;
     private String md5;
     private Integer chunkSize;
+    private UploadModeEnum modeEnum;
 }

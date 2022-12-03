@@ -1,10 +1,19 @@
 package work.xiaoying.utils.file;
 
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.codec.digest.DigestUtils;
+import org.springframework.stereotype.Component;
+import org.springframework.web.multipart.MultipartFile;
+
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.nio.MappedByteBuffer;
+import java.nio.channels.FileChannel;
 
+@Slf4j
+@Component
 public class FileUtils {
     public static byte[] readFileToByteArray(File file) {
         if (file == null) {
@@ -40,5 +49,40 @@ public class FileUtils {
             }
         }
         return new byte[0];
+    }
+
+
+    public static String withoutHeadAndTailDiagonal(String path) {
+        return path;
+    }
+
+
+    public static String getExtension(String toFileNewName) {
+        return toFileNewName.substring(toFileNewName.lastIndexOf(".")+1);
+    }
+
+    public static void freedMappedByteBuffer(MappedByteBuffer mappedByteBuffer) {
+    }
+
+    public static void close(FileChannel fileChannel) {
+        try {
+            fileChannel.close();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
+    public String getPath(FileUploadRequestDTO param) {
+        return param.getPath();
+    }
+
+    public static String getFileMD5(MultipartFile file) {
+        try {
+            return DigestUtils.md5Hex(file.getBytes());
+        } catch (Exception e) {
+            log.info(e.getMessage());
+        }
+        return "";
     }
 }

@@ -73,4 +73,8 @@ public class AnnotationUtil {
             }
         });
     }
+
+    public static <T extends Annotation> T findAnnotation(Class<?> clazz, Class<T> uploadModeClass) {
+        return clazz.getAnnotation(uploadModeClass);
+    }
 }
