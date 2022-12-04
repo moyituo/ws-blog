@@ -10,6 +10,8 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Builder;
 import lombok.Data;
 import lombok.experimental.Tolerate;
+import work.xiaoying.annotation.Sensitive;
+import work.xiaoying.enums.SensitiveStrategy;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -39,6 +41,7 @@ public class User implements Serializable {
 
     @TableField("nick_name")
     @ApiModelProperty("用户昵称")
+    @Sensitive(strategy = SensitiveStrategy.USERNAME)
     private String nickName;
 
     @TableField("email")

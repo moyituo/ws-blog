@@ -2,21 +2,21 @@ package work.xiaoying.controller;
 
 
 import cn.dev33.satoken.stp.StpUtil;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import work.xiaoying.entity.User;
+import work.xiaoying.entity.vo.UserVO;
 import work.xiaoying.result.R;
 import work.xiaoying.service.UserService;
-import work.xiaoying.utils.file.FileUploadDTO;
-import work.xiaoying.utils.file.FileUploadRequestDTO;
 import work.xiaoying.utils.file.RandomAccessUploadStrategy;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * 用户控制器
@@ -70,11 +70,15 @@ public class UserController {
         return "当前会话是否登录：" + StpUtil.isLogin();
     }
 
-    @PostMapping("check")
-    public String check(FileUploadRequestDTO param){
-        FileUploadDTO fileUploadDTO = randomAccessUploadStrategy.sliceUpload(param);
-        System.out.println(fileUploadDTO);
-        return "";
+
+    @GetMapping("Vos")
+    public R<List<UserVO>> selectVos(){
+        return R.success(userService.selectVos());
+    }
+
+    @GetMapping("page")
+    public R<Page<User>> page(){
+        return R.success(userService.page());
     }
 
 }
