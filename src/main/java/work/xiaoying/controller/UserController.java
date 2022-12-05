@@ -41,7 +41,7 @@ public class UserController {
 
     @ApiOperation("简单测试")
     @GetMapping("getUser")
-    public R<User> getUser(){
+    public R<User> getUser() {
         return R.success(User.builder().id(1)
                 .nickName("小樱")
                 .avatar("https://")
@@ -57,7 +57,7 @@ public class UserController {
     @RequestMapping("doLogin")
     public String doLogin(String username, String password) {
         // 此处仅作模拟示例，真实项目需要从数据库中查询数据进行比对
-        if("zhang".equals(username) && "123456".equals(password)) {
+        if ("zhang".equals(username) && "123456".equals(password)) {
             StpUtil.login(10001);
             return "登录成功";
         }
@@ -72,12 +72,12 @@ public class UserController {
 
 
     @GetMapping("Vos")
-    public R<List<UserVO>> selectVos(){
+    public R<List<UserVO>> selectVos() {
         return R.success(userService.selectVos());
     }
 
     @GetMapping("page")
-    public R<Page<User>> page(){
+    public R<Page<User>> page() {
         return R.success(userService.page());
     }
 
