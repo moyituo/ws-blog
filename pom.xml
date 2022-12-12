@@ -129,6 +129,12 @@
             <groupId>xin.altitude.cms</groupId>
             <artifactId>ucode-cms-common</artifactId>
             <version>1.5.9</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>mybatis-plus-core</artifactId>
+                    <groupId>com.baomidou</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

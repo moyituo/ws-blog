@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import work.xiaoying.entity.User;
 import work.xiaoying.entity.vo.UserVO;
 import work.xiaoying.result.R;
+import work.xiaoying.service.MyService;
 import work.xiaoying.service.UserService;
 import work.xiaoying.utils.file.RandomAccessUploadStrategy;
 
@@ -32,6 +33,8 @@ public class UserController {
     @Autowired
     private RandomAccessUploadStrategy randomAccessUploadStrategy;
 
+    @Autowired
+    private MyService myService;
     private final UserService userService;
 
 
@@ -81,4 +84,8 @@ public class UserController {
         return R.success(userService.page());
     }
 
+    @GetMapping("publish")
+    public R<String> publish(){
+        return R.success(myService.publish());
+    }
 }

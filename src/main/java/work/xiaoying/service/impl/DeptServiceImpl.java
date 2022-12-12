@@ -12,8 +12,8 @@ import work.xiaoying.entity.vo.DeptVO;
 import work.xiaoying.mapper.DeptMapper;
 import work.xiaoying.service.DeptService;
 import work.xiaoying.service.EmployeesService;
+import work.xiaoying.utils.ConvertUtils;
 import xin.altitude.cms.common.util.ColUtils;
-import xin.altitude.cms.common.util.EntityUtils;
 
 import java.util.*;
 import java.util.stream.Collectors;
@@ -26,7 +26,7 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
 
     public DeptVO getById(Long id){
         Dept dept = this.getById(id);
-        DeptVO deptVO = EntityUtils.toObj(dept, DeptVO::new);
+        DeptVO deptVO = ConvertUtils.toObj(dept, DeptVO::new);
         List<Employees> employeesList = employeesService.list(Wrappers.<Employees>lambdaQuery().eq(Employees::getDeptId, deptVO.getId()));
         deptVO.setEmployees(employeesList);
         return deptVO;
@@ -34,8 +34,8 @@ public class DeptServiceImpl extends ServiceImpl<DeptMapper, Dept> implements De
 
     public List<DeptVO> deptList(){
         List<Dept> depts = this.list();
-        List<DeptVO> deptVOS = EntityUtils.toList(depts, DeptVO::new);
-        Set<Integer> deptIds = EntityUtils.toSet(deptVOS, DeptVO::getId);
+        List<DeptVO> deptVOS = ConvertUtils.toList(depts, DeptVO::new);
+        Set<Integer> deptIds = ConvertUtils.toSet(deptVOS, DeptVO::getId);
         if (CollUtil.isNotEmpty(deptIds)){
             LambdaQueryWrapper<Employees> wrapper = Wrappers.<Employees>lambdaQuery().in(Employees::getDeptId, deptIds);
             List<Employees> employees = employeesService.list(wrapper);
