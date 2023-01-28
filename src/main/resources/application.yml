@@ -50,6 +50,7 @@ mybatis-plus:
 logging:
   level:
     work.xiaoying.controller: debug
+    work.xiaoying.mapper: debug
     org.springframework: warn
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{20} - [%method,%line] - %msg%n"
