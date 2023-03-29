@@ -27,4 +27,6 @@ public interface UserMapper extends BaseMapper<User> {
 
     @Select("SELECT * FROM t_user ${ew.customSqlSegment}")
     Page<User> page(Page<User> page,@Param(Constants.WRAPPER) Wrapper<User> wq);
+
+    User getUser(Integer age);
 }
